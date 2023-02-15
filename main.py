@@ -116,6 +116,5 @@ except KeyboardInterrupt:
     pass
 
 
-
-# TODO
-# Vanhojen kuvien poisto?
+#TODO
+#Delete old pictures
