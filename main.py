@@ -15,8 +15,7 @@ import tensorflow_hub as hub
 # Load model and set paths
 model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
 generated_folder_path = ['./generated_images/*.jpg']
-content_folder_path = ['./download/*.jpg']
-style_folder_path = ['./style_images_256/*.jpg']
+style_folder_path = ['./style_images/style_images_256/*.jpg']
 style_image_path = ''
 
 # Function for loading image from given path. Also converts it to right format.
@@ -81,10 +80,13 @@ try:
             style_image_path = get_random_img_path(style_folder_path)
 
             # For selecting style manually
-            # style_image_path = './style_images\starrynight.jpg'
+            #style_image_path = './style_images_256\gogh (Custom).jpg'
 
-            # Load content and style images and resize them
+            # Load content and style images
             content_image = load_image(content_image_path)
+            #content_image = load_image('./content_images\img_324ae0c8-fa56-44b3-acc6-48ff800d84a9.jpg')
+            #content_image = tf.image.resize(content_image, (180, 320))
+
             style_image = load_image(style_image_path)
 
             # Generate image using pretrained model
@@ -116,5 +118,6 @@ except KeyboardInterrupt:
     pass
 
 
-#TODO
-#Delete old pictures
+
+# TODO
+# Vanhojen kuvien poisto?
